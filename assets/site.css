@@ -33,6 +33,10 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .cap { font-size: 12px; font-weight: 400; letter-spacing: .08em; text-transform: uppercase; line-height: 1.4; }
 .muted { color: var(--muted); }
 .lead { font-size: 24px; line-height: 1.4; letter-spacing: -.005em; }
+.mark { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border: 1.5px solid currentColor; font-family: var(--f-disp); font-weight: 600; font-size: 13px; letter-spacing: .08em; line-height: 1; transition: background-color 200ms ease, color 200ms ease; }
+.mark span { transform: translateX(.04em); }
+.mark:hover { background: var(--fg); color: var(--bg); }
+@media (max-width: 750px) { .mark { width: 34px; height: 34px; font-size: 12px; } }
 .wm { font-family: var(--f-disp); font-weight: 600; font-size: 15px; letter-spacing: .18em; text-transform: uppercase; }
 .disp { font-family: var(--f-disp); font-weight: 500; text-transform: uppercase; }
 .h1p { font-family: var(--f-disp); font-weight: 500; text-transform: uppercase; font-size: 112px; line-height: .92; letter-spacing: -.025em; margin: 0; }
@@ -310,4 +314,24 @@ textarea.fld { height: 160px; padding-top: 12px; resize: vertical; line-height: 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   .js .reveal { opacity: 1; transform: none; }
+}
+
+/* Project badges + section heads + singles gallery */
+.frame .badge { position: absolute; left: 12px; bottom: 12px; padding: 6px 9px; background: rgba(17, 17, 17, .72); color: #F5F5F2; font-size: 10px; letter-spacing: .12em; line-height: 1; pointer-events: none; }
+.sec-head { display: flex; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-top: 56px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+.sec-head h2 { margin: 0; }
+.sec-head + .masonry { margin-top: 32px; }
+.singles { margin-top: var(--s-section); }
+.sgrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s-l) var(--g); margin-top: 32px; }
+.single { margin: 0; }
+.single button { display: block; width: 100%; aspect-ratio: 1 / 1; padding: 0; border: 0; background: var(--ph); cursor: zoom-in; overflow: hidden; }
+.single img, .single .ph { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 900ms var(--ease); }
+.single button:hover img { transform: scale(1.03); }
+.single figcaption { display: flex; flex-direction: column; gap: 6px; margin-top: 12px; }
+@media (max-width: 1000px) { .sgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 750px) {
+  .sec-head { margin-top: 40px; }
+  .sgrid { gap: 28px 10px; }
+  .single figcaption .cap { font-size: 10px; }
+  .frame .badge { left: 10px; bottom: 10px; }
 }
