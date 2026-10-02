@@ -90,6 +90,7 @@ a:hover .zoom img, .zoom:hover img { transform: scale(1.03); }
 .intro .lead { margin: 48px 0 0; max-width: 600px; }
 .intro .loc { margin-top: 32px; }
 .intro-fig .frame { aspect-ratio: 4 / 5; }
+.intro-fig .frame[style] { box-shadow: 0 1px 2px rgba(17,17,17,.08), 0 18px 40px -12px rgba(17,17,17,.28); }
 .intro .press { margin: 12px 0 0; max-width: 520px; }
 figcaption { margin-top: 12px; }
 @media (max-width: 1000px) { .name { font-size: 104px; } .intro-text { grid-column: 1 / span 12; } .intro-fig { grid-column: 1 / span 8; margin-top: 56px; } }
